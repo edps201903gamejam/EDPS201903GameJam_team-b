@@ -7,7 +7,8 @@ namespace DanceScene
 	public class DanceSceneManager : SingletonMonoBehaviour<DanceSceneManager>
 	{
 		public float rememberTime = 1.0f;
-
+		public int correctCount = 0;
+		public int playMaxTime = 10;
 		public enum INPUT_STATE
 		{
 			WAIT,

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using UnityEngine.UI;
+using Monster;
 
 namespace DanceScene
 {
@@ -24,7 +25,20 @@ namespace DanceScene
 		[SerializeField] private GameObject CorrectObj;
 		[SerializeField] private GameObject IncorrectObj;
 
+		//UI
 		[SerializeField] private Animator animator;
+
+		private GameObject[] monsterParts;
+
+		private int playCount = 0;
+		private bool isCommandSceneEnd = false;
+
+		private void Start()
+		{
+			//モンスターのパーツを取得する。
+			monsterParts = GameObject.FindGameObjectsWithTag("MonsterParts");
+			Debug.Log(monsterParts.Length);
+		}
 
 
 		// Update is called once per frame
@@ -35,6 +49,11 @@ namespace DanceScene
 			{
 				commandGenerate();
 				commandTextApply();
+			}
+
+			if(isCommandSceneEnd)
+			{
+				return;
 			}
 
 			//待機状態もしくは暗記状態の場合は何もしない。
@@ -57,6 +76,16 @@ namespace DanceScene
 					//CommandのStateを増やす
 					commandState += 1;
 					commandState = Mathf.Clamp(commandState, 0, commandNum);
+
+					//全てのパーツオブジェクトに対してポージング作用をさせる。
+					//重いからコルーチンに投げたほうが良い???
+
+					for (int i = 0; i < monsterParts.Length;i++)
+					{
+						monsterParts[i].GetComponent<Parts>().correctPosing();
+					}
+
+
 				}
 				else
 				{
@@ -64,10 +93,18 @@ namespace DanceScene
 					DanceSceneManager.Instance.nowState = DanceSceneManager.INPUT_STATE.WAIT;
 					IncorrectObj.SetActive(true);
 
-					Invoke("resetResultObject", 2);
 					commandState = 0;
 
-					animator.Play("CountDownAnimation");
+					playCount += 1;
+					if (playCount == DanceSceneManager.Instance.playMaxTime)
+					{
+						isCommandSceneEnd = true;
+						Debug.Log("End LIVE!");
+						return;
+					}
+					Invoke("resetResultObject", 2);
+					//animator.Play("CountDownAnimation");
+
 				}
 
 			}
@@ -79,8 +116,18 @@ namespace DanceScene
 				DanceSceneManager.Instance.nowState = DanceSceneManager.INPUT_STATE.WAIT;
 				CorrectObj.SetActive(true);
 
-				Invoke("resetResultObject", 2);
 				commandState = 0;
+				DanceSceneManager.Instance.correctCount += 1;
+				playCount += 1;
+				if (playCount == DanceSceneManager.Instance.playMaxTime)
+				{
+					isCommandSceneEnd = true;
+					Debug.Log("End LIVE!");
+					return;
+				}
+
+				Invoke("resetResultObject", 2);
+
 			}
 
 		}
