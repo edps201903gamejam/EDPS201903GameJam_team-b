@@ -10,11 +10,11 @@ public class SpriteScript : MonoBehaviour {
 
     public bool SpriteEyeTrigger = false;
 
-    public GameObject EyeParts1;
+	public Sprite EyeParts1;
 
 	// Use this for initialization
 	void Start () {
-        EyeParts1 = GameObject.Find("EyeParts1").GetComponent<GameObject>();
+		EyeParts1 = GameObject.Find("EyeParts1").GetComponent<Sprite>();
     }
 	
 	// Update is called once per frame

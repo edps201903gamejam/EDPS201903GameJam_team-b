@@ -15,14 +15,14 @@ public class EyeScript : MonoBehaviour
     void Start()
     {
         Eye = GameObject.Find("Canvas/Eye").GetComponent<Button>();
-        EyeParts1 = GameObject.Find("Canvas/EyeParts1").GetComponent<Button>();
+        EyeParts1 = GameObject.Find("Canvas/FirstSelect/EyeParts1").GetComponent<Button>();
     }
 
     void Update()
     {
         if (EyeTrigger)
         {
-            EyeParts1.transform.position = new Vector3(900, 567, 0);
+            EyeParts1.transform.position = new Vector3(75, 600, 0);
         }
     }
 
