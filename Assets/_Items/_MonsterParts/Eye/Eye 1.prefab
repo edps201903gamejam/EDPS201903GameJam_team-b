@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114753820454401140}
   m_Layer: 0
   m_Name: eye_02
-  m_TagString: Untagged
+  m_TagString: MonsterParts
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
