@@ -16,6 +16,7 @@ namespace Monster
 			NOSE,
 			BROWS,
 			BODY,
+			MOUTH,
 			OTHER,
 		}
 	
