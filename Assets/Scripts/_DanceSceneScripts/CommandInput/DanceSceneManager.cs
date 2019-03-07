@@ -14,9 +14,28 @@ namespace DanceScene
 			WAIT,
 			COMMAND_REMENBER,
 			COMMAND_INPUT,
+			END_DANCE,
 		};
 
 		public INPUT_STATE nowState;
+
+		//ゲーム終了時の画面。
+		[SerializeField] private GameObject gameSetUI;
+
+
+		private void Update()
+		{
+			if(nowState != INPUT_STATE.END_DANCE)
+			{
+				return;
+			}
+
+			if(Input.GetKeyDown(KeyCode.Space))
+			{
+				LoadSceneManager.Instance.LoadStart("ResultScene");
+			}
+			
+		}
 
 		public void startRememberWait()
 		{
@@ -32,6 +51,13 @@ namespace DanceScene
 		}
 
 
+		public void startEndEffects()
+		{
+			Debug.Log("StartEndEffects");
+			nowState = INPUT_STATE.END_DANCE;
+			gameSetUI.gameObject.SetActive(true);
+			Debug.Log(gameSetUI);
+		}
 
 	}
 }
