@@ -12,6 +12,7 @@ public class BodyScript : MonoBehaviour {
 	public Button Parts2;
 	public Button Parts3;
 
+
 	public bool EyeTrigger = false;
 
 	int i = 0;

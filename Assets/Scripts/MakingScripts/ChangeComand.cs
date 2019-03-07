@@ -24,19 +24,19 @@ public class ChangeComand : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(Change){
-			RotateR.transform.position = new Vector3 (RotateR.transform.position.x, -50, 0);
-			RotateL.transform.position = new Vector3(RotateL.transform.position.x, -50, 0);
-			Delete.transform.position = new Vector3(Delete.transform.position.x, -50, 0);
+			RotateR.transform.position = new Vector3 (RotateR.transform.position.x,  -125, 0);
+			RotateL.transform.position = new Vector3(RotateL.transform.position.x, -125, 0);
+			Delete.transform.position = new Vector3(Delete.transform.position.x,  -125, 0);
 
-			Up.transform.position = new Vector3(Up.transform.position.x,50,1);
-			Down.transform.position = new Vector3(Down.transform.position.x, 50, 1);
+			Up.transform.position = new Vector3(Up.transform.position.x,55,1);
+			Down.transform.position = new Vector3(Down.transform.position.x, 55, 1);
 		}else if(!Change){
-			RotateR.transform.position = new Vector3(RotateR.transform.position.x, 25, 1);
-			RotateL.transform.position = new Vector3(RotateL.transform.position.x, 25, 1);
-			Delete.transform.position = new Vector3(Delete.transform.position.x, 25, 1);
+			RotateR.transform.position = new Vector3(RotateR.transform.position.x, -75, 1);
+			RotateL.transform.position = new Vector3(RotateL.transform.position.x, -75, 1);
+			Delete.transform.position = new Vector3(Delete.transform.position.x, -75, 1);
 
-			Up.transform.position = new Vector3(Up.transform.position.x, -50, 0);
-			Down.transform.position = new Vector3(Down.transform.position.x, -50, 0);
+			Up.transform.position = new Vector3(Up.transform.position.x, -55, 0);
+			Down.transform.position = new Vector3(Down.transform.position.x, -55, 0);
 		}
 	}
 

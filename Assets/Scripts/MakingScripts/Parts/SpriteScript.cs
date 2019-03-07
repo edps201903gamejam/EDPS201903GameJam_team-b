@@ -25,7 +25,7 @@ public class SpriteScript : MonoBehaviour {
 
         if(SpriteEyeTrigger){
 			Parts1.transform.localScale = new Vector3(size,size);
-			Instantiate(Parts1, new Vector3(200f, 100f, 1f), Quaternion.identity);
+			Instantiate(Parts1, new Vector3(0f, 0f, 1f), Quaternion.identity);
 			SetParts1.transform.position = new Vector3(-100, SetParts1.transform.position.y, 0);
 			SetParts2.transform.position = new Vector3(-100, SetParts2.transform.position.y, 0);
 			SetParts3.transform.position = new Vector3(-100, SetParts3.transform.position.y, 0);
