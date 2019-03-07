@@ -64,7 +64,13 @@ namespace DanceScene
 			}
 
 
-			Debug.Log("ANSWER:" + danceCommand[commandState]);
+			//Debug.Log("ANSWER:" + danceCommand[commandState]);
+
+			//タイマーを監視し続ける。
+			if (CommandTimerManager.Instance.isStartTimer == false)
+			{
+				incorrectAction();
+			}
 
 			//コマンドが正しく入力されているかを確認する。
 			//マウスの入力を弾く。
@@ -89,24 +95,8 @@ namespace DanceScene
 				}
 				else
 				{
-					Debug.Log("不正解です。INPUT_STATEをWAITに戻します。");
-					DanceSceneManager.Instance.nowState = DanceSceneManager.INPUT_STATE.WAIT;
-					IncorrectObj.SetActive(true);
-
-					commandState = 0;
-
-					playCount += 1;
-					if (playCount == DanceSceneManager.Instance.playMaxTime)
-					{
-						isCommandSceneEnd = true;
-						Debug.Log("End LIVE!");
-						return;
-					}
-					Invoke("resetResultObject", 2);
-					//animator.Play("CountDownAnimation");
-
+					incorrectAction();
 				}
-
 			}
 
 
@@ -176,6 +166,26 @@ namespace DanceScene
 			CorrectObj.SetActive(false);
 			IncorrectObj.SetActive(false);
 			animator.Play("CountDownAnimation", 0, 0);
+		}
+
+
+		private void incorrectAction()
+		{
+			Debug.Log("不正解です。INPUT_STATEをWAITに戻します。");
+			DanceSceneManager.Instance.nowState = DanceSceneManager.INPUT_STATE.WAIT;
+			IncorrectObj.SetActive(true);
+
+			commandState = 0;
+
+			playCount += 1;
+			if (playCount == DanceSceneManager.Instance.playMaxTime)
+			{
+				isCommandSceneEnd = true;
+				Debug.Log("End LIVE!");
+				return;
+			}
+			Invoke("resetResultObject", 2);
+			//animator.Play("CountDownAnimation");
 		}
 
 
