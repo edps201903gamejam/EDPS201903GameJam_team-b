@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - MonsterParts
+  - LeftRotate
+  - RightRotate
+  - Dalete
+  - Reverse
   layers:
   - Default
   - TransparentFX
@@ -39,6 +43,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: StageObjects
+    uniqueID: 1375547067
+    locked: 0
+  - name: StageEffectObjects
+    uniqueID: 2650171829
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: fun
+    uniqueID: 2753100063
     locked: 0
