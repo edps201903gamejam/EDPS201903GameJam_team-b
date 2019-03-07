@@ -15,6 +15,8 @@ public class ChangeComand : MonoBehaviour {
 
 	public Button Up;
 	public Button Down;
+	public Button ScaleUp;
+	public Button ScaleDown;
 
 	// Use this for initialization
 	void Start () {
@@ -30,6 +32,8 @@ public class ChangeComand : MonoBehaviour {
 
 			Up.transform.position = new Vector3(Up.transform.position.x,55,1);
 			Down.transform.position = new Vector3(Down.transform.position.x, 55, 1);
+			ScaleUp.transform.position = new Vector3(ScaleUp.transform.position.x, 55, 1);
+			ScaleDown.transform.position = new Vector3(ScaleDown.transform.position.x, 55, 1);
 		}else if(!Change){
 			RotateR.transform.position = new Vector3(RotateR.transform.position.x, -75, 1);
 			RotateL.transform.position = new Vector3(RotateL.transform.position.x, -75, 1);
@@ -37,6 +41,8 @@ public class ChangeComand : MonoBehaviour {
 
 			Up.transform.position = new Vector3(Up.transform.position.x, -55, 0);
 			Down.transform.position = new Vector3(Down.transform.position.x, -55, 0);
+			ScaleUp.transform.position = new Vector3(ScaleUp.transform.position.x, -55, 0);
+			ScaleDown.transform.position = new Vector3(ScaleDown.transform.position.x, -55, 0);
 		}
 	}
 
