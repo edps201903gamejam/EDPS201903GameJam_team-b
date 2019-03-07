@@ -20,6 +20,9 @@ public class ResultManager : SingletonMonoBehaviour<ResultManager> {
 		_audio = GetComponent<AudioSource>();
 		_correctCount = DanceSceneManager.CORRECT_COUNT;
 		StartCoroutine(soundPlay());
+
+		//Test
+		//_correctCount = 5;
 	}
 	
 	// Update is called once per frame
@@ -35,12 +38,12 @@ public class ResultManager : SingletonMonoBehaviour<ResultManager> {
 		if(_correctCount * 100 > scoreCounter)
 		{
 			scoreCounter += 7;
-			scoreCounter = Mathf.Clamp(scoreCounter, 0, _correctCount * 10);
+			scoreCounter = Mathf.Clamp(scoreCounter, 0, _correctCount * 100);
 			scoreText.text = scoreTextApply(scoreCounter);
 			return;
 		}
 
-		//StopCoroutine(soundPlay());
+		StopCoroutine(soundPlay());
 		isCountEnd = true;
 	}
 

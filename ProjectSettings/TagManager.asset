@@ -9,6 +9,7 @@ TagManager:
   - RightRotate
   - Dalete
   - Reverse
+  - MonsterPartsParent
   layers:
   - Default
   - TransparentFX
