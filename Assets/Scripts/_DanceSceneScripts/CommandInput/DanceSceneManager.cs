@@ -6,6 +6,8 @@ namespace DanceScene
 {
 	public class DanceSceneManager : SingletonMonoBehaviour<DanceSceneManager>
 	{
+		public static int CORRECT_COUNT;
+
 		public float rememberTime = 1.0f;
 		public int correctCount = 0;
 		public int playMaxTime = 10;
@@ -32,6 +34,7 @@ namespace DanceScene
 
 			if(Input.GetKeyDown(KeyCode.Space))
 			{
+				CORRECT_COUNT = correctCount;
 				LoadSceneManager.Instance.LoadStart("ResultScene");
 			}
 			
