@@ -113,6 +113,7 @@ namespace DanceScene
 				{
 					isCommandSceneEnd = true;
 					Debug.Log("End LIVE!");
+					DanceSceneManager.Instance.startEndEffects();
 					return;
 				}
 
@@ -182,12 +183,12 @@ namespace DanceScene
 			{
 				isCommandSceneEnd = true;
 				Debug.Log("End LIVE!");
+				DanceSceneManager.Instance.startEndEffects();
 				return;
 			}
 			Invoke("resetResultObject", 2);
 			//animator.Play("CountDownAnimation");
 		}
-
 
 	}	
 
