@@ -37,6 +37,10 @@ namespace DanceScene
 
 			//暗記の時間を開始。
 			DanceSceneManager.Instance.startRememberWait();
+
+			//コマンド入力のタイマーを起動。
+			CommandTimerManager.Instance.timerStart();
+
 			//gameObject.SetActive(false);
 		}
 	}
