@@ -33,8 +33,16 @@ namespace DanceScene
 		private int playCount = 0;
 		private bool isCommandSceneEnd = false;
 
+
+		//SE
+		private AudioSource[] audioSources;
+
+
 		private void Start()
 		{
+			//サウンドを取得
+			audioSources = GetComponents<AudioSource>();
+
 			//モンスターのパーツを取得する。
 			monsterParts = GameObject.FindGameObjectsWithTag("MonsterParts");
 			Debug.Log(monsterParts.Length);
@@ -82,7 +90,7 @@ namespace DanceScene
 					//CommandのStateを増やす
 					commandState += 1;
 					commandState = Mathf.Clamp(commandState, 0, commandNum);
-
+					audioSources[3].Play();
 					//全てのパーツオブジェクトに対してポージング作用をさせる。
 					//重いからコルーチンに投げたほうが良い???
 
@@ -102,6 +110,8 @@ namespace DanceScene
 
 			if (commandState == commandNum)
 			{
+				audioSources[0].Play();
+
 				Debug.Log("大正解！");
 				DanceSceneManager.Instance.nowState = DanceSceneManager.INPUT_STATE.WAIT;
 				CorrectObj.SetActive(true);
@@ -175,7 +185,7 @@ namespace DanceScene
 			Debug.Log("不正解です。INPUT_STATEをWAITに戻します。");
 			DanceSceneManager.Instance.nowState = DanceSceneManager.INPUT_STATE.WAIT;
 			IncorrectObj.SetActive(true);
-
+			audioSources[1].Play();
 			commandState = 0;
 
 			playCount += 1;
