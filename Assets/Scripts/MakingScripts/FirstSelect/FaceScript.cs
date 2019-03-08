@@ -11,7 +11,7 @@ public class FaceScript : MonoBehaviour {
 	Button Legs;
 	Button Other;
 
-    Button FaceLine;
+    Button Back;
     Button Eye;
     Button Nose;
     Button Brows;
@@ -29,7 +29,7 @@ public class FaceScript : MonoBehaviour {
 		Other = GameObject.Find("Canvas/FirstSelect/Other").GetComponent<Button>();
 
 		//挿入ボタン
-		FaceLine = GameObject.Find("Canvas/FirstSelect/FaceLine").GetComponent<Button>();
+		Back = GameObject.Find("Canvas/FirstSelect/FaceLine").GetComponent<Button>();
 		Eye = GameObject.Find("Canvas/FirstSelect/Eye").GetComponent<Button>();
 		Nose = GameObject.Find("Canvas/FirstSelect/Nose").GetComponent<Button>();
 		Brows = GameObject.Find("Canvas/FirstSelect/Brows").GetComponent<Button>();
@@ -42,11 +42,17 @@ public class FaceScript : MonoBehaviour {
 
         if (isTrigger)
         {
-			FaceLine.transform.position = new Vector3(Face.transform.position.x, Face.transform.position.y, 0);
+			Back.transform.position = new Vector3(Face.transform.position.x, Face.transform.position.y, 0);
 			Eye.transform.position = new Vector3(Body.transform.position.x, Body.transform.position.y, 0);
 			Nose.transform.position = new Vector3(Hand.transform.position.x, Hand.transform.position.y, 0);
 			Brows.transform.position = new Vector3(Legs.transform.position.x, Legs.transform.position.y, 0);
 			Mouse.transform.position = new Vector3(Other.transform.position.x, Other.transform.position.y, 0);
+
+			Face.transform.position = new Vector3(-200, Face.transform.position.y, 0);
+			Body.transform.position = new Vector3(-200, Body.transform.position.y, 0);
+			Hand.transform.position = new Vector3(-200, Hand.transform.position.y, 0);
+			Legs.transform.position = new Vector3(-200, Legs.transform.position.y, 0);
+			Other.transform.position = new Vector3(-200, Other.transform.position.y, 0);
         }
 		isTrigger = false;
     }
