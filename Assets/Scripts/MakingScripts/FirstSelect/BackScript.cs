@@ -44,11 +44,11 @@ public class BackScript : MonoBehaviour
 		
 		if (isTrigger)
 		{
-			Face.transform.position = new Vector3(Back.transform.position.x, Face.transform.position.y, 0);
-			Body.transform.position = new Vector3(Eye.transform.position.x, Body.transform.position.y, 0);
-			Hand.transform.position = new Vector3(Nose.transform.position.x, Hand.transform.position.y, 0);
-			Legs.transform.position = new Vector3(Brows.transform.position.x, Legs.transform.position.y, 0);
-			Other.transform.position = new Vector3(Mouse.transform.position.x, Other.transform.position.y, 0);
+			Face.transform.position = new Vector3(Back.transform.position.x, Face.transform.position.y, 1);
+			Body.transform.position = new Vector3(Eye.transform.position.x, Body.transform.position.y, 1);
+			Hand.transform.position = new Vector3(Nose.transform.position.x, Hand.transform.position.y, 1);
+			Legs.transform.position = new Vector3(Brows.transform.position.x, Legs.transform.position.y, 1);
+			Other.transform.position = new Vector3(Mouse.transform.position.x, Other.transform.position.y, 1);
 
 			Back.transform.position = new Vector3(-200, Face.transform.position.y, 0);
 			Eye.transform.position = new Vector3(-200, Body.transform.position.y, 0);
