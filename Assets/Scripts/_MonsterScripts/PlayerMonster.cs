@@ -17,7 +17,7 @@ namespace Monster
 
 		public void gotoResultScene()
 		{
-			transform.position = new Vector3(-2.8f, 0, 0);
+			transform.position = new Vector3(-90.8f, 0, 0);
 		}
 	}	
 
