@@ -10,6 +10,7 @@ TagManager:
   - Dalete
   - Reverse
   - MonsterPartsParent
+  - Body
   layers:
   - Default
   - TransparentFX
