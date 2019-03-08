@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Monster;
 
 namespace DanceScene
 {
@@ -24,7 +25,6 @@ namespace DanceScene
 		//ゲーム終了時の画面。
 		[SerializeField] private GameObject gameSetUI;
 
-
 		private void Update()
 		{
 			if(nowState != INPUT_STATE.END_DANCE)
@@ -35,6 +35,7 @@ namespace DanceScene
 			if(Input.GetKeyDown(KeyCode.Space))
 			{
 				CORRECT_COUNT = correctCount;
+				PlayerMonster.Instance.gotoResultScene();
 				LoadSceneManager.Instance.LoadStart("ResultScene");
 			}
 			
