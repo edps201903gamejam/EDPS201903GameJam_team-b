@@ -4096,6 +4096,7 @@ GameObject:
   m_Component:
   - component: {fileID: 936140157}
   - component: {fileID: 936140158}
+  - component: {fileID: 936140159}
   m_Layer: 0
   m_Name: PlayerMonster
   m_TagString: Untagged
@@ -4134,6 +4135,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &936140159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 936140156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55ba535ac7f13460790bd7e2facd25f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1006978043 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224857346606431908, guid: 4029b6cb07c3e41e58b52976577ebe65,
