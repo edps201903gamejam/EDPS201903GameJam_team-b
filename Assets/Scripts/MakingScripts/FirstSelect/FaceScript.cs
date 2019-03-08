@@ -17,6 +17,8 @@ public class FaceScript : MonoBehaviour {
     Button Brows;
     Button Mouse;
 
+
+
     public bool isTrigger = false;
 
 	//各ボタンの取得
@@ -42,11 +44,11 @@ public class FaceScript : MonoBehaviour {
 
         if (isTrigger)
         {
-			Back.transform.position = new Vector3(Face.transform.position.x, Face.transform.position.y, 0);
-			Eye.transform.position = new Vector3(Body.transform.position.x, Body.transform.position.y, 0);
-			Nose.transform.position = new Vector3(Hand.transform.position.x, Hand.transform.position.y, 0);
-			Brows.transform.position = new Vector3(Legs.transform.position.x, Legs.transform.position.y, 0);
-			Mouse.transform.position = new Vector3(Other.transform.position.x, Other.transform.position.y, 0);
+			Back.transform.position = new Vector3(Face.transform.position.x, Face.transform.position.y, 1);
+			Eye.transform.position = new Vector3(Body.transform.position.x, Body.transform.position.y, 1);
+			Nose.transform.position = new Vector3(Hand.transform.position.x, Hand.transform.position.y, 1);
+			Brows.transform.position = new Vector3(Legs.transform.position.x, Legs.transform.position.y, 1);
+			Mouse.transform.position = new Vector3(Other.transform.position.x, Other.transform.position.y, 1);
 
 			Face.transform.position = new Vector3(-200, Face.transform.position.y, 0);
 			Body.transform.position = new Vector3(-200, Body.transform.position.y, 0);
@@ -54,6 +56,7 @@ public class FaceScript : MonoBehaviour {
 			Legs.transform.position = new Vector3(-200, Legs.transform.position.y, 0);
 			Other.transform.position = new Vector3(-200, Other.transform.position.y, 0);
         }
+
 		isTrigger = false;
     }
 
